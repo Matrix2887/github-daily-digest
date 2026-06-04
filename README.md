@@ -24,6 +24,7 @@
 |-------------|------|------|
 | `SMTP_SERVER` | SMTP 服务器地址 | `smtp.gmail.com` |
 | `SMTP_PORT` | SMTP 端口 | `465` |
+| `SMTP_SSL` | 是否启用 SSL | `true` |
 | `SENDER_EMAIL` | 发件人邮箱 | `your-email@gmail.com` |
 | `SENDER_PASSWORD` | 邮箱密码或应用专用密码 | `your-app-password` |
 | `RECIPIENT_EMAIL` | 收件人邮箱（多个用逗号分隔） | `user@example.com` |
