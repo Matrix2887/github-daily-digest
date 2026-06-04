@@ -2,10 +2,9 @@ name: GitHub Daily Digest
 
 on:
   schedule:
-    # 每天早上 8:00 UTC (北京时间 16:00，需要调整)
     # 北京时间 8:00 = UTC 00:00
     - cron: '0 0 * * *'
-  workflow_dispatch:  # 允许手动触发
+  workflow_dispatch:
 
 jobs:
   daily-digest:
@@ -13,10 +12,10 @@ jobs:
     
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2
       
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v5.6.0
         with:
           python-version: '3.11'
           cache: 'pip'
@@ -30,6 +29,7 @@ jobs:
         env:
           SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_SSL: ${{ secrets.SMTP_SSL }}
           SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
           SENDER_PASSWORD: ${{ secrets.SENDER_PASSWORD }}
           RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL }}
