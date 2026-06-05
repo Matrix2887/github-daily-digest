@@ -4,8 +4,10 @@
 
 ## 功能
 
-- **Stars 昨日增长 Top 10** - 从 GitHub Trending 获取
-- **Stars 增长率 Top 10** - 从 OssInsight API 获取（发现黑马项目）
+- **🔥 Stars 昨日增长 Top 10** - 从 GitHub Trending 获取
+- **📈 Stars 增长率 Top 10** - 从 OssInsight API 获取（发现黑马项目）
+- **📅 本周订阅增长 Top 10** - 从 GitHub Trending Weekly 获取
+- **⭐ Stars 总数最高 Top 10** - 从 GitHub API 获取（全站热门项目）
 - **中文总结** - 混合风格：通俗易懂 + 技术细节
 - **HTML 邮件** - 每天早上 8:00 自动发送
 - **群发支持** - 支持多个收件人，逗号分隔
@@ -118,11 +120,13 @@ python scripts/main.py
 
 ## 工作原理
 
-1. **爬取 GitHub Trending** - 获取今日 Stars 增长最多的 10 个项目
-2. **调用 OssInsight API** - 获取 Stars 增长率最高的 10 个项目
-3. **生成中文总结** - 使用 Google Translate 翻译 + 技术关键词提取
-4. **生成 HTML 报告** - 包含表格、链接、统计数据
-5. **发送邮件** - 通过 SMTP 发送到指定邮箱
+1. **爬取 GitHub Trending Daily** - 获取今日 Stars 增长最多的 10 个项目
+2. **爬取 GitHub Trending Weekly** - 获取本周 Stars 增长最多的 10 个项目
+3. **调用 OssInsight API** - 获取 Stars 增长率最高的 10 个项目
+4. **调用 GitHub API** - 获取 Stars 总数最高的 10 个项目
+5. **生成中文总结** - 使用 Google Translate 翻译 + 技术关键词提取
+6. **生成 HTML 报告** - 包含 4 个表格、链接、统计数据
+7. **发送邮件** - 通过 SMTP 发送到指定邮箱
 
 ## 失败重试
 
